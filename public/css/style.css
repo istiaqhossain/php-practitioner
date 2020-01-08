@@ -1,0 +1,58 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+}
+
+a,
+a:hover {
+    color: #212529;
+    text-decoration: none;
+}
+
+.brand h1 {
+    font-weight: 900;
+}
+
+.primary-nav ul li {
+    display: inline-block;
+    margin: 0px 30px;
+}
+.primary-nav ul li a {
+    text-transform: uppercase;
+    font-size: 19px;
+    line-height: 28px;
+    padding: 8px 0px;
+    display: inline-block;
+    position: relative;
+}
+.primary-nav ul li a:before {
+    transition: all 0.25s ease 0s;
+    -o-transition: all 0.25s ease 0s;
+    -ms-transition: all 0.25s ease 0s;
+    -moz-transition: all 0.25s ease 0s;
+    -webkit-transition: all 0.25s ease 0s;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-color: #212529;
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 2px;
+    left: 50%;
+    bottom: 0;
+}
+.primary-nav ul li a:hover:before {
+    width: 100%;
+}
