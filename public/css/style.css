@@ -18,6 +18,11 @@ a:hover {
     text-decoration: none;
 }
 
+b, 
+strong {
+    font-weight: 700;
+}
+
 .brand h1 {
     font-weight: 900;
 }

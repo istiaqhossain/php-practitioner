@@ -3,7 +3,9 @@
 class Router
 {
 	public $routes = [
-		'GET' => [],
+		'GET' => [
+			'404' => 'controllers/404.php'
+		],
 		'POST' => []
 	];
 
@@ -32,6 +34,7 @@ class Router
 			return $this->routes[$requestType][$uri];
 		}
 
-		throw new Exception("No route defined for this URI");		
+		//throw new Exception("No route defined for this URI");		
+		return $this->routes['GET']['404'];
 	}
 }
