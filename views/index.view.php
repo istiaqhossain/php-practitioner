@@ -9,10 +9,10 @@
     <div class="col-md-6 offset-md-3 text-center">
       <form class="" method="POST" action="/names">
         <div class="form-group mx-sm-3 mb-2">
-          <label for="name" class="sr-only">Name</label>
-          <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+          <label for="username" class="sr-only">Username</label>
+          <input type="text" class="form-control" id="username" name="username" placeholder="Username">
         </div>
-        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+        <button type="submit" class="btn btn-primary mb-2">Push</button>
       </form>
     
     </div>
