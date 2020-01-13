@@ -1,4 +1,7 @@
 <?php
-echo '<pre>';
-var_dump($_REQUEST);
-var_dump($app['database']);
+
+$app['database']->insert('users',[
+    'username' => $_POST['username']
+]);
+
+header('Location: /');
