@@ -6,4 +6,8 @@
 
 Select All 
 
-`$app['database']->selectAll($table);`
+`App::get('database')->selectAll($table);`
+
+Dynamic Insert
+
+`App::get('database')->insert($table,$data);`
