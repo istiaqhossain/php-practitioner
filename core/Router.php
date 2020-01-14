@@ -4,7 +4,7 @@ class Router
 {
 	public $routes = [
 		'GET' => [
-			'404' => 'controllers/404.php'
+			'404' => 'NotFoundController@index'
 		],
 		'POST' => []
 	];
@@ -31,10 +31,22 @@ class Router
 	public function direct($uri, $requestType)
 	{
 		if (array_key_exists($uri, $this->routes[$requestType])) {
-			return $this->routes[$requestType][$uri];
+			return $this->callAction(
+				...explode('@', $this->routes[$requestType][$uri])
+			);
 		}
 
-		//throw new Exception("No route defined for this URI");		
-		return $this->routes['GET']['404'];
+		header('Location: /404');
+	}
+
+	protected function callAction($controller,$action) 
+	{
+		$controller = new $controller;
+		
+		if (! method_exists($controller,$action)) {
+			throw new Exception("Specific Controller does not respond to the {$action} action");
+		}
+		
+		return $controller->$action();
 	}
 }
