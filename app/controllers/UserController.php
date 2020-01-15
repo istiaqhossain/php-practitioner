@@ -1,10 +1,20 @@
 <?php
+namespace App\Controllers;
+
+use App\Models\User;
 
 class UserController 
 {
+    private $user;
+    
+    public function __construct()
+    {
+        $this->user = new User;
+    }
+    
     public function index()
     {
-        $users = App::get('database')->selectAll('users');
+        $users = $this->user->getAllUsers();
 
         return view('users', ['users'=>$users]);
     }
@@ -12,9 +22,9 @@ class UserController
     public function store() 
     {
         if (!empty($_POST['username'])) {
-            App::get('database')->insert('users',[
+            $user = $this->user->storeUser([
                 'username' => $_POST['username']
-            ]);    
+            ]);
         }
         
         return redirect('users');
